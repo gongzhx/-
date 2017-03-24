@@ -666,7 +666,7 @@ namespace 测风仪调试工具
 
         private void btnSpeed20Add_2_Click(object sender, EventArgs e)
         {
-            Send_Message("#2-\r\n");
+            Send_Message("#2+\r\n");
         }
 
         private void btnReset_GO_Click(object sender, EventArgs e)
