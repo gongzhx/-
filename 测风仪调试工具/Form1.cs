@@ -2238,6 +2238,11 @@ namespace 测风仪调试工具
             }
             timer2.Stop();
         }
+
+        private void 导入发送信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
    
     

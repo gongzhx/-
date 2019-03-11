@@ -1965,14 +1965,15 @@
             // 保存接收信息ToolStripMenuItem
             // 
             this.保存接收信息ToolStripMenuItem.Name = "保存接收信息ToolStripMenuItem";
-            this.保存接收信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.保存接收信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.保存接收信息ToolStripMenuItem.Text = "保存接收信息";
             // 
             // 导入发送信息ToolStripMenuItem
             // 
             this.导入发送信息ToolStripMenuItem.Name = "导入发送信息ToolStripMenuItem";
-            this.导入发送信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.导入发送信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.导入发送信息ToolStripMenuItem.Text = "导入发送信息";
+            this.导入发送信息ToolStripMenuItem.Click += new System.EventHandler(this.导入发送信息ToolStripMenuItem_Click);
             // 
             // 升级ToolStripMenuItem
             // 
@@ -1987,14 +1988,14 @@
             // ToolOpenFile
             // 
             this.ToolOpenFile.Name = "ToolOpenFile";
-            this.ToolOpenFile.Size = new System.Drawing.Size(124, 22);
+            this.ToolOpenFile.Size = new System.Drawing.Size(180, 22);
             this.ToolOpenFile.Text = "打开文件";
             this.ToolOpenFile.Click += new System.EventHandler(this.ToolOpenFile_Click);
             // 
             // ToolupDataFW
             // 
             this.ToolupDataFW.Name = "ToolupDataFW";
-            this.ToolupDataFW.Size = new System.Drawing.Size(124, 22);
+            this.ToolupDataFW.Size = new System.Drawing.Size(180, 22);
             this.ToolupDataFW.Text = "一键升级";
             this.ToolupDataFW.Click += new System.EventHandler(this.一键升级ToolStripMenuItem_Click);
             // 
@@ -2018,7 +2019,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HCXSerialPortTool";
-            this.Text = "海创鑫测风仪调试";
+            this.Text = "测风仪调试";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HCXSerialPortTool_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
