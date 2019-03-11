@@ -40,6 +40,7 @@
             this.cbxBaudRate = new System.Windows.Forms.ComboBox();
             this.cbxSerialPort = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnClearReEdit = new System.Windows.Forms.Button();
             this.btnSent = new System.Windows.Forms.Button();
             this.txtEdit = new System.Windows.Forms.TextBox();
             this.txtMessage = new System.Windows.Forms.TextBox();
@@ -187,10 +188,17 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label36 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnClearReEdit = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.刷新串口列表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.保存接收信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导入发送信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.升级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolOpenFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolupDataFW = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -205,6 +213,7 @@
             this.Direction360.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // serialPort1
@@ -220,7 +229,7 @@
             this.groupBox1.Controls.Add(this.cbxNetIP);
             this.groupBox1.Controls.Add(this.cbxBaudRate);
             this.groupBox1.Controls.Add(this.cbxSerialPort);
-            this.groupBox1.Location = new System.Drawing.Point(25, 24);
+            this.groupBox1.Location = new System.Drawing.Point(25, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(344, 92);
             this.groupBox1.TabIndex = 0;
@@ -325,12 +334,22 @@
             this.groupBox2.Controls.Add(this.btnSent);
             this.groupBox2.Controls.Add(this.txtEdit);
             this.groupBox2.Controls.Add(this.txtMessage);
-            this.groupBox2.Location = new System.Drawing.Point(25, 122);
+            this.groupBox2.Location = new System.Drawing.Point(25, 123);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(344, 382);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "接收发送信息";
+            // 
+            // btnClearReEdit
+            // 
+            this.btnClearReEdit.Location = new System.Drawing.Point(283, 239);
+            this.btnClearReEdit.Name = "btnClearReEdit";
+            this.btnClearReEdit.Size = new System.Drawing.Size(49, 23);
+            this.btnClearReEdit.TabIndex = 3;
+            this.btnClearReEdit.Text = "清空";
+            this.btnClearReEdit.UseVisualStyleBackColor = true;
+            this.btnClearReEdit.Click += new System.EventHandler(this.btnClearReEdit_Click);
             // 
             // btnSent
             // 
@@ -375,7 +394,7 @@
             this.groupBox3.Controls.Add(this.lblVirtualValue);
             this.groupBox3.Controls.Add(this.lblWindSpeed);
             this.groupBox3.Controls.Add(this.lblWindDirection);
-            this.groupBox3.Location = new System.Drawing.Point(400, 24);
+            this.groupBox3.Location = new System.Drawing.Point(400, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(166, 212);
             this.groupBox3.TabIndex = 2;
@@ -1891,25 +1910,15 @@
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(35, 515);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(47, 12);
+            this.label36.Size = new System.Drawing.Size(65, 12);
             this.label36.TabIndex = 12;
-            this.label36.Text = "label36";
+            this.label36.Text = "收到的字节";
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 333;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnClearReEdit
-            // 
-            this.btnClearReEdit.Location = new System.Drawing.Point(283, 239);
-            this.btnClearReEdit.Name = "btnClearReEdit";
-            this.btnClearReEdit.Size = new System.Drawing.Size(49, 23);
-            this.btnClearReEdit.TabIndex = 3;
-            this.btnClearReEdit.Text = "清空";
-            this.btnClearReEdit.UseVisualStyleBackColor = true;
-            this.btnClearReEdit.Click += new System.EventHandler(this.btnClearReEdit_Click);
             // 
             // contextMenuStrip1
             // 
@@ -1922,16 +1931,76 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.toolStripMenuItem1.Text = "设备管理器";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // 刷新串口列表ToolStripMenuItem
             // 
             this.刷新串口列表ToolStripMenuItem.Name = "刷新串口列表ToolStripMenuItem";
-            this.刷新串口列表ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.刷新串口列表ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.刷新串口列表ToolStripMenuItem.Text = "刷新串口列表";
             this.刷新串口列表ToolStripMenuItem.Click += new System.EventHandler(this.刷新串口列表ToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.文件ToolStripMenuItem,
+            this.升级ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(806, 25);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 文件ToolStripMenuItem
+            // 
+            this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.保存接收信息ToolStripMenuItem,
+            this.导入发送信息ToolStripMenuItem});
+            this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.文件ToolStripMenuItem.Text = "文件";
+            // 
+            // 保存接收信息ToolStripMenuItem
+            // 
+            this.保存接收信息ToolStripMenuItem.Name = "保存接收信息ToolStripMenuItem";
+            this.保存接收信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.保存接收信息ToolStripMenuItem.Text = "保存接收信息";
+            // 
+            // 导入发送信息ToolStripMenuItem
+            // 
+            this.导入发送信息ToolStripMenuItem.Name = "导入发送信息ToolStripMenuItem";
+            this.导入发送信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.导入发送信息ToolStripMenuItem.Text = "导入发送信息";
+            // 
+            // 升级ToolStripMenuItem
+            // 
+            this.升级ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolOpenFile,
+            this.ToolupDataFW});
+            this.升级ToolStripMenuItem.Name = "升级ToolStripMenuItem";
+            this.升级ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.升级ToolStripMenuItem.Text = "固件升级";
+            this.升级ToolStripMenuItem.Click += new System.EventHandler(this.升级ToolStripMenuItem_Click);
+            // 
+            // ToolOpenFile
+            // 
+            this.ToolOpenFile.Name = "ToolOpenFile";
+            this.ToolOpenFile.Size = new System.Drawing.Size(124, 22);
+            this.ToolOpenFile.Text = "打开文件";
+            this.ToolOpenFile.Click += new System.EventHandler(this.ToolOpenFile_Click);
+            // 
+            // ToolupDataFW
+            // 
+            this.ToolupDataFW.Name = "ToolupDataFW";
+            this.ToolupDataFW.Size = new System.Drawing.Size(124, 22);
+            this.ToolupDataFW.Text = "一键升级";
+            this.ToolupDataFW.Click += new System.EventHandler(this.一键升级ToolStripMenuItem_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // HCXSerialPortTool
             // 
@@ -1939,6 +2008,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 539);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.tabControl1);
@@ -1946,6 +2016,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "HCXSerialPortTool";
             this.Text = "海创鑫测风仪调试";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HCXSerialPortTool_FormClosing);
@@ -1970,6 +2041,8 @@
             this.Direction360.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2138,6 +2211,14 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 刷新串口列表ToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 文件ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 升级ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolOpenFile;
+        private System.Windows.Forms.ToolStripMenuItem ToolupDataFW;
+        private System.Windows.Forms.ToolStripMenuItem 保存接收信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 导入发送信息ToolStripMenuItem;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
